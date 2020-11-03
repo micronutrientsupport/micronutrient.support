@@ -1,0 +1,185 @@
+// Example of project-name.scss
+// Define variables to override default ones
+$primary-color: #328481;
+$secondary-color: #6a6556;
+
+// Import full Spectre source code
+@import "node_modules/spectre.css/src/spectre";
+
+li {
+    display: block;
+    margin-top: 0;
+}
+
+.d-grid {
+    display: grid;
+}
+
+.d-contents {
+    display: contents;
+}
+
+.gg-1 {
+    grid-gap: 4px;
+}
+
+.gg-2 {
+    grid-gap: 8px;
+}
+
+.g-col-1 {
+    grid-column-start: 1;
+}
+
+.g-col-2 {
+    grid-column-start: 2;
+}
+
+.pr-1 {padding-right: 4px;} 
+.pr-2 {padding-right: 8px;}
+.pl-1 {padding-left: 4px;} 
+.pl-2 {padding-left: 8px;}
+
+.border-gray {
+    border-style: solid;
+    border-color: #ccc;
+}
+.border {
+    border-width: 1px;
+}
+.border-l {
+    border-width: 0;
+    border-left-width: 1px;
+}
+.border-r {
+    border-width: 0;
+    border-right-width: 1px;
+}
+.border-t {
+    border-width: 0;
+    border-top-width: 1px;
+}
+.border-b {
+    border-width: 0;
+    border-bottom-width: 1px;
+}
+
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    min-height: 100vh;
+}
+main {
+    flex-grow: 1;
+}
+
+
+.list {
+    grid-template-columns: 1rem auto 1fr;
+}
+
+@media (max-width: $size-sm) {
+
+    header section {
+        flex-wrap: wrap;
+        justify-content: flex-start !important;
+    }
+    .hero {
+        padding-bottom: 40px !important;
+        padding-top: 40px !important;
+    }    
+    .blurb {
+        width: 100%;
+    }
+    .list {
+        grid-template-columns: 1fr;
+    }
+    .a-nextPage {
+        width: 100%;
+    }
+    .a-dt {
+        grid-column-start: 1;
+        text-align: left;
+        border-width: 0;
+    }
+    .a-empty-letter {
+        display: none;
+    }
+    .a-letter span {
+        text-align: left;
+    }
+
+    .form-group {
+        width: 100%;
+    }
+}
+
+/* IE hacks */
+_:-ms-fullscreen, :root .a-dt {
+    text-align: left;
+    border-right-width: 0; }
+  
+  _:-ms-fullscreen, :root main {
+    margin-bottom: 1.4rem; }
+  
+    @keyframes fadeInLeftSmall {
+    from {
+      opacity: 0;
+      transform: translate3d(-20%, 0, 0);
+    }
+  
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  .fadeInLeftSmall {
+    animation-name: fadeInLeftSmall;
+  }
+  
+  @keyframes fadeInRightSmall {
+    from {
+      opacity: 0;
+      transform: translate3d(20%, 0, 0);
+    }
+  
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  .fadeInRightSmall {
+    animation-name: fadeInRightSmall;
+  }
+  
+  .jc-centre {
+      justify-content: center;
+  }
+  
+  .border-0 {
+      border-width: 0;
+  }
+  
+  .flex-column {
+      flex-direction: column;
+  }
+  
+  *,
+  *:after,
+  *:before {
+    box-sizing: border-box
+  }
+  html, body {
+    margin: 0;
+    display: flex;
+  }
+  body {
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  main {
+    flex-grow: 1
+  }

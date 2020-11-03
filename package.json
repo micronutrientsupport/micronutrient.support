@@ -1,0 +1,21 @@
+{
+  "name": "maps-home",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node_modules/.bin/node-sass --recursive --output css --source-map true --source-map-contents scss",
+    "run": "node_modules/.bin/eleventy",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@11ty/eleventy": "^0.10.0",
+    "spectre.css": "^0.5.8"
+  },
+  "devDependencies": {
+    "node-sass": "^4.13.1"
+  }
+}
