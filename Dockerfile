@@ -7,8 +7,7 @@ RUN npm install
 
 COPY ./ /usr/src/page
 
-RUN npm run sass
-RUN npm run run
+RUN npm run build
 
 #this lines are not in use for multistage build
 #EXPOSE 8081
