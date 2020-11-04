@@ -1,6 +1,5 @@
-default:
-    image: alpine
+image: alpine
   
-  test:
-    script:
-      - echo "Hello World"
+test:
+ script:
+  - echo "Hello World"
