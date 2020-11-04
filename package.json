@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "sass": "node_modules/.bin/node-sass --recursive --output _site/css --source-map true --source-map-contents scss",
+    "sass": "node_modules/.bin/node-sass --recursive --output css --source-map true --source-map-contents scss",
     "run": "node_modules/.bin/eleventy",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
