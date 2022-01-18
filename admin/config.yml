@@ -2,16 +2,15 @@ backend:
   name: git-gateway
   repo: micronutrientsupport/micronutrient.support
   branch: main
+publish_mode: editorial_workflow
 media_folder: "images/uploads"
 public_folder: "_site/images/uploads"
 collections:
   - name: posts
     identifier_field: name
-    folder: "co-design"
+    folder: "/"
     create: true
     label: 'Posts'
     fields:
-      - {label: "Name", name: "name", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Featured Image", name: "thumbnail", widget: "image"}
-      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Body", name: "sections", widget: "markdown"}
