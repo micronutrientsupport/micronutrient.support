@@ -12,5 +12,19 @@ collections:
     create: true
     label: 'Posts'
     fields:
+      - {label: "Layout", name: "layout", widget: "hidden", default: "default"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Body", name: "sections", widget: "markdown"}
+      - label: "Blocks"
+        name: "sections"
+        widget: "list"
+        allow_add: true
+        summary: '{{fields.title}}'
+        fields:
+         - {label: Quote, name: quote, widget: string, default: "Everything is awesome!"}
+         - label: Author
+          name: author
+          widget: object
+          fields:
+            - {label: Title, name: title, widget: string, default: "Block Header"}
+            - {label: Image, name: image, widget: image, default: "/img/watch.png"}
