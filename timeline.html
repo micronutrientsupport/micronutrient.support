@@ -1,48 +1,65 @@
 ---
 layout: default
+title: Project Timeline
+sections:
+  - image: /images/watch.png
+    content:
+      - title: What will be delivered overall?
+        content: 'A web-delivered tool to estimate micronutrient deficiencies and explore pathways to improve
+      nutrition. This will have associated user-support and educational resources. The tool will be fully open
+      access, with pre-loaded and bring-your-own data options. Is any of this functionality of interest to you?
+      Please connect with us if so by emailing <a href="mailto:codesign@micronutrient.support">codesign@micronutrient.support</a> and we will keep you updated.'
+      - title: What is happening right now?
+        content: 'We are busy confirming our data and modelling protocols for the MAPS Tool. We are also conducting short user interviews to ensure that we prioritise functionality development that will make the tool easy to use and well-designed for the questions users have. Want to get involved? Please contact us at <a href="mailto:codesign@micronutrient.support">codesign@micronutrient.support</a> or see <a href="/co-design/">co-design</a> for more details.'
+      - title: What is coming next?
+        content: 'From late 2020 we will start user-testing of the system, progressing through from wireframes to early
+        ‘live’ version releases later in 2021. Want to get involved in this system testing? Please contact
+        us at <a href="mailto:codesign@micronutrient.support">codesign@micronutrient.support</a>'
 ---
 
 <div class="column col-12">
 
-    <h1 class="text-primary">Project Timeline</h1>
-
-
-
+    <h1 class="text-primary">{{ title }}</h1>
 
     <div class="columns mb-2">
+        {%- for section in sections -%}
+        {% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
+        {% if thecycle == 'even' %}
+        {% if section.title %}
+            <h2 class="text-primary column col-12">{{ section.title }}</h2>
+        {% endif %}
+        <div class="column col-4 text-center"">
+            <img src="{{ section.image }}" style="max-width: 100%">
+        </div>
         <div class="column col-8 col-md-12">
-            <div class="column col-12 col-md-12">
-                <h2 class="text-primary">What will be delivered overall?</h2>
-                <p>A web-delivered tool to estimate micronutrient deficiencies and explore pathways to improve
-                    nutrition.
-                    This will have associated user-support and educational resources. The tool will be fully open
-                    access,
-                    with pre-loaded and bring-your-own data options. Is any of this functionality of interest to you?
-                    Please
-                    connect with us if so by emailing <a href="mailto:codesign@micronutrient.support">codesign@micronutrient.support</a> and we will keep you updated.
-                </p>
-            </div>
-
-            <div class="column col-12 col-md-12">
-                <h2 class="text-primary">What is happening right now?</h2>
-                <p>We are busy confirming our data and modelling protocols for the MAPS Tool. We are also conducting
-                    short user interviews to ensure that we prioritise functionality development that will make the tool
-                    easy to use and well-designed for the questions users have. Want to get involved? Please contact us at <a href="mailto:codesign@micronutrient.support">codesign@micronutrient.support</a> or see <a href="/co-design/">co-design</a> for more details.
-                </p>
-            </div>
-
-            <div class="column col-12 col-md-12">
-                <h2 class="text-primary">What is coming next?</h2>
-                <p>From late 2020 we will start user-testing of the system, progressing through from wireframes to early
-                    ‘live’ version releases later in 2021. Want to get involved in this system testing? Please contact
-                    us at <a href="mailto:codesign@micronutrient.support">codesign@micronutrient.support</a>
-                </p>
-            </div>
-
+            {%- for block in section.content -%}
+            {% if block.title %}
+            <h2 class="text-primary">{{block.title}}</h2>
+            {% endif %}
+            <p>{{ block.content }}</p>
+            {%- endfor -%}
         </div>
-        <div class="column col-4 hide-md">
-            <img src="/images/watch.png" style="max-width: 100%;">
+        {% endif %}
+        {% if thecycle == 'odd' %}
+        <div class="column col-8 col-md-12">
+            {% if section.title %}
+                <h2 class="text-primary">{{ section.title }}</h2>
+            {% endif %}
+            {%- for block in section.content -%}
+            {% if block.title %}
+            <h2 class="text-primary">{{block.title}}</h2>
+            {% endif %}
+            <p>{{ block.content }}</p>
+            {%- endfor -%}
         </div>
+        <div class="column col-4 col-md-12">
+            <img src="{{ section.image }}" style="max-width: 100%">
+        </div>
+        {% endif %}
+        {%- endfor -%}
     </div>
 
+    <div class="text-primary column col-12">
+        <p>{{footnote}}</p>
+    </div>
 </div>

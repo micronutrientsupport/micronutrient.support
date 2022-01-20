@@ -1,0 +1,37 @@
+backend:
+  name: git-gateway
+  repo: micronutrientsupport/micronutrient.support
+  branch: main
+publish_mode: editorial_workflow
+media_folder: "images/uploads"
+public_folder: "_site/images/uploads"
+collections:
+  - name: posts
+    identifier_field: name
+    folder: "/"
+    create: true
+    label: 'Posts'
+    fields:
+      - label: "Layout"
+        name: "layout"
+        widget: "hidden"
+        default: "default"
+      - label: "Title"
+        name: "title"
+        widget: "string"
+      - label: "Blocks"
+        name: "sections"
+        widget: "list"
+        allow_add: true
+        summary: '{{fields.title}}'
+        fields:
+          - label: Title
+            name: title
+            widget: string
+            default: "Block Header"
+            required: false
+          - label: Image
+            name: image
+            widget: image
+            default: "/img/watch.png"
+            required: false
