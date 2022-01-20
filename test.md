@@ -1,0 +1,31 @@
+---
+layout: new
+title: About MAPS
+sections:
+  - title: What is the problem?
+    image: /images/crop.jpg
+    content: 
+      - content: 'Micronutrients such as: folic acid, iron, iodine, selenium, zinc, and vitamins A, Bs, C, D, E, K are essential
+  for human health and are mostly acquired from the food we eat. Although humans require small quantities of these
+  micronutrients, inadequate intake of one or more of these cause micronutrient deficiency (MND) which have
+  serious ramifications on the health of individuals affected and the economy of the country in which they live.
+  Micronutrient deficiencies are global problems and can be significant concerns in sub-Saharan Africa. With the
+  burgeoning human population and anticipated changes in climate which impact on food availability, MNDs are
+  likely to remain important problems. Hence, it is crucial to better understand MNDs at various scales and
+  time-horizons, to support evidence gathering for policy interventions and program investments.'
+  - title: The Micronutrient Support Tool
+    image: /images/structure.png
+    content: 
+      - content: 'Micronutrient Action Policy Support (MAPS) tool will deliver a co-designed, web-hosted tool, to enable the best
+  possible estimates of MNDs to be communicated at national and sub-national scales in Africa. The MAPS tool
+  will be a unique enabling environment for the wider Agriculture-Nutrition community and beyond. Through novel
+  functionality, this tool will allow users to view and explore MND risks at various spatial and temporal scales.
+  The tool will provide users with dietary micronutrient supply estimates of all nations in Africa using
+  national-scale data, which can be spatially disaggregated by population data. Where survey data on food
+  consumption (e.g. Household Consumption and Expenditure Surveys, HCES) or food composition (e.g. GeoNutrition
+  surveys) are available for a nation, these data will support delivery of sub-national estimates of dietary
+  micronutrient supplies and risks of deficiency. Where both types of data are available with good spatial
+  resolution for the geography of interest, these will provide the most spatially disaggregated estimates
+  possible.'
+footnote: 'The MAPS project is funded by the <a href="https://www.gatesfoundation.org/">Bill & Melinda Gates Foundation</a>'
+---

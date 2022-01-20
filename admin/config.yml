@@ -29,7 +29,9 @@ collections:
             name: title
             widget: string
             default: "Block Header"
+            required: false
           - label: Image
             name: image
             widget: image
             default: "/img/watch.png"
+            required: false

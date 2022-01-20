@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" style="display: flex; flex-direction: column; min-height: 100vh;">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <link href="/css/styles.css" rel="stylesheet">
+  <!--link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-exp.min.css"-->
+  <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+  <script async defer data-domain="micronutrient.support" src="https://stats.micronutrient.support/js/plausible.js"></script>
+  <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+
+<body style="height: 100%">
+  <header class="navbar bg-primary p-2" style="min-height: 52px">
+    
+    <section class="navbar-section">
+      <a href="/" class="navbar-brand mr-2" style="color: #fff">
+        Micronutrient Action Policy Support</a>
+    </section>
+    <section class="navbar-section">
+      <a href="/" class="btn btn-link text-gray">Home</a>
+      <a href="/about/" class="btn btn-link text-gray">About MAPS</a>
+      <a href="/timeline/" class="btn btn-link text-gray">Project Timeline</a>
+      <a href="/team/" class="btn btn-link text-gray">Meet the Team</a>
+      <a href="/co-design/" class="btn btn-link text-gray">Co-Design</a>
+    </section>
+  </header>
+
+  <main class="container grid-xl">
+    <section class="columns" style="margin-top: 2em">
+      <div class="column col-12">
+        <div class="column col-12">
+
+            <h1 class="text-primary">{{ title }}</h1>
+        
+            <div class="columns mb-2">
+                {%- for section in sections -%}
+                {% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
+                {% if thecycle == 'even' %}
+                {% if section.title %}
+                    <h2 class="text-primary column col-12">{{ section.title }}</h2>
+                {% endif %}
+                <div class="column col-4 text-center"">
+                    <img src="{{ section.image }}" style="max-width: 100%">
+                </div>
+                <div class="column col-8 col-md-12">
+                    {%- for block in section.content -%}
+                    {% if block.title %}
+                    <h2 class="text-primary">{{block.title}}</h2>
+                    {% endif %}
+                    <p>{{ block.content }}</p>
+                    {%- endfor -%}
+                </div>
+                {% endif %}
+                {% if thecycle == 'odd' %}
+                <div class="column col-8 col-md-12">
+                    {% if section.title %}
+                        <h2 class="text-primary">{{ section.title }}</h2>
+                    {% endif %}
+                    {%- for block in section.content -%}
+                    {% if block.title %}
+                    <h2 class="text-primary">{{block.title}}</h2>
+                    {% endif %}
+                    <p>{{ block.content }}</p>
+                    {%- endfor -%}
+                </div>
+                <div class="column col-4 col-md-12">
+                    <img src="{{ section.image }}" style="max-width: 100%">
+                </div>
+                {% endif %}
+                {%- endfor -%}
+            </div>
+        
+            <div class="text-primary column col-12">
+                <p>{{footnote}}</p>
+            </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="navbar bg-dark p-2" style="min-height: 40px">
+    <section class="navbar-section text-right">
+      &copy; Micronutrient Action Policy Support 2020
+    </section>
+  </footer>
+</body>
+
+</html>
